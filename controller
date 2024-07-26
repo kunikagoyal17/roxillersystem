@@ -1,0 +1,58 @@
+package com.example.transactionapi.controller;
+
+import com.example.transactionapi.model.Transaction;
+import com.example.transactionapi.service.TransactionService;
+import com.example.transactionapi.dto.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api")
+public class TransactionController {
+    @Autowired
+    private TransactionService transactionService;
+
+    @PostMapping("/initialize")
+    public void initializeDatabase() {
+        // Fetch JSON data from the third-party API
+        // Save transactions to the database
+    }
+
+    @GetMapping("/transactions")
+    public List<Transaction> getAllTransactions(@RequestParam Month month,
+                                                @RequestParam(defaultValue = "") String search,
+                                                @RequestParam(defaultValue = "1") int page,
+                                                @RequestParam(defaultValue = "10") int perPage) {
+        // Implement pagination and search functionality
+        return null;
+    }
+
+    @GetMapping("/statistics")
+    public StatisticsResponse getStatistics(@RequestParam Month month) {
+        // Calculate statistics
+        return null;
+    }
+
+    @GetMapping("/bar_chart")
+    public BarChartResponse getBarChart(@RequestParam Month month) {
+        // Calculate bar chart data
+        return null;
+    }
+
+    @GetMapping("/pie_chart")
+    public PieChartResponse getPieChart(@RequestParam Month month) {
+        // Calculate pie chart data
+        return null;
+    }
+
+    @GetMapping("/combined_data")
+    public CombinedResponse getCombinedData(@RequestParam Month month) {
+        // Combine data from all previous endpoints
+        return null;
+    }
+}
