@@ -1,0 +1,18 @@
+package com.example.transactionapi.model;
+
+import javax.persistence.*;
+import java.time.LocalDate;
+
+@Entity
+public class Transaction {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String title;
+    private String description;
+    private Double price;
+    private LocalDate dateOfSale;
+    private Boolean sold;
+    private String category;
+}
