@@ -1,0 +1,9 @@
+package com.example.transactionapi.dto;
+
+import java.util.Map;
+
+public class BarChartResponse {
+    private Map<String, Integer> priceRanges;
+
+    
+}
